@@ -92,7 +92,7 @@ class QuizApp:
             self.pontuacao += 1
             feedback = "Resposta correta!"
         else:
-            feedback = f"Resposta incorreta. A resposta correta é: {self.pergunta_atual}"
+            feedback = f"Resposta incorreta. A resposta correta é: {self.pergunta_atual.resposta}"
 
         messagebox.showinfo("Feedback", feedback)
         self.perguntas.remove(self.pergunta_atual)
@@ -106,3 +106,9 @@ class QuizApp:
         resultado = f"Sua pontuação final: {self.pontuacao}/{len(perguntas)}"
         messagebox.showinfo("Resultado", resultado)
         self.master.destroy()
+
+perguntas = [
+    Pergunta("O que um programador faz quando está com fome enquanto codifica?", ["Come bytes de informação", "Faz um lanche rápido", "Pede um delivery de código-fonte", "Niels Bohr"], "Come bytes de informação", "Porque a fome não espera por compilação!"),
+    Pergunta("Qual é a comida favorita do programador?", ["Fish and Chips", "Cookies e Cache", "Bits de Frango", "Niels Bohr"], "Cookies e Cache", "Porque é rápido e armazenado para acesso futuro."),
+    Pergunta("Qual é o animal favorito do programador?", ["Gato", "Cachorro", "Pinguim", "Niels Bohr"], "Pinguim", "Porque ele gosta de Linux."),
+]
