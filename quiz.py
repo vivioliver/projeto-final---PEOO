@@ -75,6 +75,9 @@ class QuizApp:
     def selecionar_resposta(self):
         self.resposta_escolhida = self.opcoes_var.get()
 
+
+
+
     def iniciar_contagem_regressiva(self):
         self.contagem_regressiva = 10
         self.atualizar_contagem_regressiva()
@@ -103,7 +106,7 @@ class QuizApp:
         messagebox.showinfo("Dica", dica)
 
     def mostrar_resultado(self):
-        resultado = f"Sua pontuação final: {self.pontuacao}/{len(perguntas)}"
+        resultado = f"Sua pontuação final: {self.pontuacao}"
         messagebox.showinfo("Resultado", resultado)
         self.master.destroy()
 
