@@ -28,7 +28,7 @@ class QuizApp:
         self.barra_progresso = ttk.Progressbar(self.master, orient="horizontal", length=200, mode="determinate")
         self.barra_progresso.pack(pady=5)
 
-        self.label_contagem_regressiva = tk.Label(self.master, text="Tempo restante: ", font=("Arial", 10))
+        self.label_contagem_regressiva = tk.Label(self.master, text="Tempo restante: ", font=("Arial", 15))
         self.label_contagem_regressiva.pack(pady=5)
 
         self.label_pergunta = tk.Label(self.master, text="", font=("Arial", 12))
@@ -63,7 +63,7 @@ class QuizApp:
     def atualizar_interface(self):
         self.label_pontuacao.config(text=f"Pontuação: {self.pontuacao}")
         self.barra_progresso['value'] = 100
-        self.label_contagem_regressiva.config(text="Tempo restante: 10")
+        self.label_contagem_regressiva.config(text="Tempo restante: 15")
         self.label_pergunta.config(text=self.pergunta_atual.pergunta)
 
         opcoes = self.pergunta_atual.opcoes
@@ -79,7 +79,7 @@ class QuizApp:
 
 
     def iniciar_contagem_regressiva(self):
-        self.contagem_regressiva = 10
+        self.contagem_regressiva = 15
         self.atualizar_contagem_regressiva()
 
     def atualizar_contagem_regressiva(self):
