@@ -116,4 +116,11 @@ perguntas = [
     Pergunta("Como o programador pede pizza?", ["Por telefone", "Online", "Usando APIs de entrega", "Niels Bohr"], "Usando APIs de entrega", "Porque ele gosta de pedir com eficiência."),
     Pergunta("O que o programador mais gosta de assistir?", ["Séries de comédia", "Filmes de ação", "Documentários técnicos", "Niels Bohr"], "Documentários técnicos", "Para aprender novas tecnologias."),
     Pergunta("Qual é o superpoder secreto do programador?", ["Voar", "Invisibilidade", "Debugging instantâneo", "Niels Bohr"], "Debugging instantâneo", "Resolver problemas com um único olhar."),
+    Pergunta("O que o programador diz para a sua cafeína?", ["Você me deixa acordado", "Você me dá energia", "Você é meu combustível", "Niels Bohr"], "Você é meu combustível", "Porque cafeína é essencial para a codificação!"),
+    Pergunta("Se nossa professora de programação fosse uma guru da moda no mundo da codificação, como descreveríamos seu estilo e paleta de cores estilosa?", ["Pixel Prism - reinventando a moda com uma mistura de pixels multicoloridos, capturando a essência da programação criativa.", "Stylish Scripter - deslumbrando com um visual moderno, misturando preto, rosa e detalhes em prata", "Code Couture - brilhando com uma paleta vibrante de verde-limão, roxo e toques de código dourado", "Cyber Chic - reinventando a moda com uma mistura de preto, azul elétrico e detalhes de neon"], "Pixel Prism - reinventando a moda com uma mistura de pixels multicoloridos, capturando a essência da programação criativa.", "Sobre nossa professora Priscilla")
 ]
+
+
+root = tk.Tk()
+app = QuizApp(root, perguntas)
+root.mainloop()
