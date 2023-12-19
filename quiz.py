@@ -111,4 +111,9 @@ perguntas = [
     Pergunta("O que um programador faz quando está com fome enquanto codifica?", ["Come bytes de informação", "Faz um lanche rápido", "Pede um delivery de código-fonte", "Niels Bohr"], "Come bytes de informação", "Porque a fome não espera por compilação!"),
     Pergunta("Qual é a comida favorita do programador?", ["Fish and Chips", "Cookies e Cache", "Bits de Frango", "Niels Bohr"], "Cookies e Cache", "Porque é rápido e armazenado para acesso futuro."),
     Pergunta("Qual é o animal favorito do programador?", ["Gato", "Cachorro", "Pinguim", "Niels Bohr"], "Pinguim", "Porque ele gosta de Linux."),
+    Pergunta("O que o programador faz antes de dormir?", ["Fecha os olhos", "Desliga o computador", "Fecha a tampa do laptop", "Niels Bohr"], "Fecha a tampa do laptop", "Para entrar no modo de suspensão."),
+    Pergunta("Por que o programador odeia ir à praia?", ["Medo de sol", "Problemas com areia", "Não sabe nadar", "Niels Bohr"], "Problemas com areia", "Porque é difícil evitar os bugs na areia."),
+    Pergunta("Como o programador pede pizza?", ["Por telefone", "Online", "Usando APIs de entrega", "Niels Bohr"], "Usando APIs de entrega", "Porque ele gosta de pedir com eficiência."),
+    Pergunta("O que o programador mais gosta de assistir?", ["Séries de comédia", "Filmes de ação", "Documentários técnicos", "Niels Bohr"], "Documentários técnicos", "Para aprender novas tecnologias."),
+    Pergunta("Qual é o superpoder secreto do programador?", ["Voar", "Invisibilidade", "Debugging instantâneo", "Niels Bohr"], "Debugging instantâneo", "Resolver problemas com um único olhar."),
 ]
