@@ -68,9 +68,41 @@ class QuizApp:
 
         opcoes = self.pergunta_atual.opcoes
         random.shuffle(opcoes)
-        
+
         for i in range(4):
             self.opcoes_radio[i].config(text=opcoes[i], value=opcoes[i])
 
     def selecionar_resposta(self):
         self.resposta_escolhida = self.opcoes_var.get()
+
+    def iniciar_contagem_regressiva(self):
+        self.contagem_regressiva = 10
+        self.atualizar_contagem_regressiva()
+
+    def atualizar_contagem_regressiva(self):
+        self.label_contagem_regressiva.config(text=f"Tempo restante: {self.contagem_regressiva}")
+        if self.contagem_regressiva > 0:
+            self.contagem_regressiva -= 1
+            self.master.after(1000, self.atualizar_contagem_regressiva)
+        else:
+            self.verificar_resposta()
+
+    def verificar_resposta(self):
+        if self.resposta_escolhida == self.pergunta_atual.resposta:
+            self.pontuacao += 1
+            feedback = "Resposta correta!"
+        else:
+            feedback = f"Resposta incorreta. A resposta correta é: {self.pergunta_atual}"
+
+        messagebox.showinfo("Feedback", feedback)
+        self.perguntas.remove(self.pergunta_atual)
+        self.proxima_pergunta()
+
+    def mostrar_dica(self):
+        dica = self.pergunta_atual.dica
+        messagebox.showinfo("Dica", dica)
+
+    def mostrar_resultado(self):
+        resultado = f"Sua pontuação final: {self.pontuacao}/{len(perguntas)}"
+        messagebox.showinfo("Resultado", resultado)
+        self.master.destroy()
