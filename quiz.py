@@ -36,3 +36,41 @@ class QuizApp:
 
         self.opcoes_var = tk.StringVar()
         self.opcoes_radio = []
+
+
+        
+        for i in range(4):
+            opcao_radio = tk.Radiobutton(self.master, text="", variable=self.opcoes_var, value="", command=self.selecionar_resposta)
+            opcao_radio.pack()
+            self.opcoes_radio.append(opcao_radio)
+
+        self.botao_ajuda = tk.Button(self.master, text="Dica", command=self.mostrar_dica)
+        self.botao_ajuda.pack(pady=10)
+
+        self.botao_proxima_pergunta = tk.Button(self.master, text="Próxima Pergunta", command=self.proxima_pergunta)
+        self.botao_proxima_pergunta.pack(pady=10)
+
+        self.proxima_pergunta()
+
+    def proxima_pergunta(self):
+        if self.perguntas:
+            self.pergunta_atual = random.choice(self.perguntas)
+            self.iniciar_contagem_regressiva()
+            self.atualizar_interface()
+        else:
+            self.mostrar_resultado()
+
+    def atualizar_interface(self):
+        self.label_pontuacao.config(text=f"Pontuação: {self.pontuacao}")
+        self.barra_progresso['value'] = 100
+        self.label_contagem_regressiva.config(text="Tempo restante: 10")
+        self.label_pergunta.config(text=self.pergunta_atual.pergunta)
+
+        opcoes = self.pergunta_atual.opcoes
+        random.shuffle(opcoes)
+        
+        for i in range(4):
+            self.opcoes_radio[i].config(text=opcoes[i], value=opcoes[i])
+
+    def selecionar_resposta(self):
+        self.resposta_escolhida = self.opcoes_var.get()
